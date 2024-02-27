@@ -36,11 +36,11 @@ const app = http.createServer((req, res) => {
     const response = ['This is the list of our students'];
     countStudents(process.argv[2])
       .then((report) => {
-        response.push(report);
+        response.push(...report);
         res.end(response.join('\n'));
       })
       .catch(() => {
-        response.push('Cannot load the database')
+        response.push('Cannot load the database');
         res.end(response.join('\n'));
       });
   }
