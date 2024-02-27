@@ -29,18 +29,20 @@ const countStudents = (path) => new Promise((resolve, reject) => {
 });
 
 const app = http.createServer((req, res) => {
-  if (req.url === "/") {
+  if (req.url === '/') {
     res.end('Hello Holberton School!');
   }
-  if (req.url === "/students") {
+  if (req.url === '/students') {
+    const response = ['This is the list of our students'];
     countStudents(process.argv[2])
       .then((report) => {
-        const response = ["This is the list of our students", ...report];
+        response.push(report);
         res.end(response.join('\n'));
       })
-      .catch((err) => {
-        res.end("Cannot load the database");
-      })
+      .catch(() => {
+        response.push('Cannot load the database')
+        res.end(response.join('\n'));
+      });
   }
 });
 
