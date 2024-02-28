@@ -9,7 +9,6 @@ const readDatabase = (path) => new Promise((resolve, reject) => {
       const db = data.split('\n').map((row) => row.split(','));
       const students = db.slice(1, -1);
       const fields = {};
-      const response = [];
       for (const student of students) {
         if (fields[student[3]]) {
           fields[student[3]].push(student[0]);

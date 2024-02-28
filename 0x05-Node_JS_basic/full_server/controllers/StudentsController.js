@@ -1,4 +1,4 @@
-import readDatabase from "../utils";
+import readDatabase from '../utils';
 
 class StudentController {
   static getAllStudents(request, response) {
@@ -18,8 +18,9 @@ class StudentController {
   static getAllStudentsByMajor(request, response) {
     const { major } = request.params;
 
-    if (major !== "CS" && major !== "SWE") {
-      return response.status(500).send('Major parameter must be CS or SWE');
+    if (major !== 'CS' && major !== 'SWE') {
+      response.status(500).send('Major parameter must be CS or SWE');
+      return;
     }
 
     readDatabase(process.argv[2])

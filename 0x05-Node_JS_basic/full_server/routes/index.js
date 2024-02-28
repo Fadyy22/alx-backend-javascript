@@ -5,7 +5,6 @@ const mountRoutes = (app) => {
   app.get('/', AppController.getHomePage);
   app.get('/students', StudentController.getAllStudents);
   app.get('/students/:major', StudentController.getAllStudentsByMajor);
-
 };
 
 export default mountRoutes;
