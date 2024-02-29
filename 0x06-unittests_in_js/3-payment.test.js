@@ -12,4 +12,4 @@ describe('sendPaymentRequestToApi', function () {
     expect(utilsSpy.calculateNumber.calledOnce).to.be.true;
     utilsSpy.calculateNumber.restore();
   });
-})
+});
