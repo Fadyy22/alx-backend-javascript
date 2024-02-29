@@ -8,7 +8,7 @@ describe('sendPaymentRequestToApi', function () {
     const utilsSpy = spy(Utils);
 
     sendPaymentRequestToApi(100, 20);
-    expect(utilsSpy.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
+    expect(utilsSpy.calculateNumber.calledWith('SUM', 100, 20)).true;
     expect(utilsSpy.calculateNumber.calledOnce).true;
     utilsSpy.calculateNumber.restore();
   });
