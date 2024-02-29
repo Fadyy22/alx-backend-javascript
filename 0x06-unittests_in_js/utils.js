@@ -13,7 +13,7 @@ const Utils = {
       }
       return a / b;
     }
-  }
-}
+  },
+};
 
 module.exports = Utils;
