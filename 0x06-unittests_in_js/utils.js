@@ -1,18 +1,18 @@
 const Utils = {
   calculateNumber(type, a, b) {
-    a = Math.round(a);
-    b = Math.round(b);
+    const n1 = Math.round(a);
+    const n2 = Math.round(b);
 
     if (type === 'SUM') {
-      return a + b;
-    } else if (type === 'SUBTRACT') {
-      return a - b;
-    } else if (type === 'DIVIDE') {
-      if (b === 0) {
-        return 'Error';
-      }
-      return a / b;
+      return n1 + n2;
     }
+    if (type === 'SUBTRACT') {
+      return n1 - n2;
+    }
+    if (type === 'DIVIDE') {
+      return b === 0 ? 'Error' : a / b;
+    }
+    return 0;
   },
 };
 
