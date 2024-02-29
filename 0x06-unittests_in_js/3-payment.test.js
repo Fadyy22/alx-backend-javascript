@@ -9,7 +9,7 @@ describe('sendPaymentRequestToApi', function () {
 
     sendPaymentRequestToApi(100, 20);
     expect(utilsSpy.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
-    expect(utilsSpy.calculateNumber.calledOnce).to.be.true;
+    expect(utilsSpy.calculateNumber.callCount).equals(1);
     utilsSpy.calculateNumber.restore();
   });
 });
