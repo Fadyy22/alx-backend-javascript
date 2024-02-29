@@ -13,6 +13,7 @@ describe('sendPaymentRequestToApi', function () {
     expect(calculateNumberStub.calledWith('SUM', 100, 20)).to.be.true;
     expect(calculateNumberStub.callCount).equals(1);
     expect(consoleSpy.log.calledWith('The total is: 10')).to.be.true;
+    expect(consoleSpy.log.callCount).equals(1);
     calculateNumberStub.restore();
     consoleSpy.log.restore();
   });
