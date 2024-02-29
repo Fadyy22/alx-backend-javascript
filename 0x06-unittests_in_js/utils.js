@@ -10,7 +10,7 @@ const Utils = {
       return n1 - n2;
     }
     if (type === 'DIVIDE') {
-      return b === 0 ? 'Error' : a / b;
+      return n2 === 0 ? 'Error' : n1 / n2;
     }
     return 0;
   },
